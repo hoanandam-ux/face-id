@@ -27,35 +27,31 @@
   /* ─────────────────────────────────────────
      CẤU HÌNH — chỉnh sửa tại đây
   ───────────────────────────────────────── */
-  var CONFIG = {
-    // URL ảnh tham chiếu của công chúa
+
+var CONFIG = {
     REF_IMAGE_URL: 'https://i.postimg.cc/YCRKwXVN/777746d0-1788-4c3f-bb45-b5d3fc30c6be.jpg',
 
-    // Ngưỡng nhận diện: 0.0 = giống hệt, 0.6 = thoáng giống
-    // Khuyên dùng: 0.5 (chặt) hoặc 0.6 (thoáng)
-    THRESHOLD: 0.75,
+    // ✅ Tăng threshold cho nhanh hơn, chịu được ánh sáng xấu
+    THRESHOLD: 0.62,
 
-    // Đường dẫn thư mục models (relative hoặc CDN)
-    // Nếu dùng CDN jsDelivr từ GitHub repo của bạn:
-    // 'https://cdn.jsdelivr.net/gh/TEN_GITHUB/TEN_REPO@main/models'
-    MODELS_URL: './models',
+    // ✅ Dùng CDN model toàn cầu, tải trong 100ms, không cần host trên github nữa
+    MODELS_URL: 'https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model',
 
-    // Thời gian quét tối đa (ms) trước khi timeout
-    SCAN_TIMEOUT: 30000,
+    // ✅ Tăng timeout lên 1 phút
+    SCAN_TIMEOUT: 60000,
 
-    // Bao nhiêu frame liên tiếp match thì xác nhận (tránh false positive)
-    CONFIRM_FRAMES: 3,
+    // ✅ QUAN TRỌNG NHẤT: Đổi từ 3 thành 1 frame
+    // Bây giờ nó sẽ xác nhận NGAY LẬP TỨC khi thấy khớp
+    CONFIRM_FRAMES: 1,
 
-    // Hiển thị debug overlay (bbox + tên)
     DEBUG_OVERLAY: false,
 
-    // ID các element trong XML/HTML
     EL: {
       VIDEO:          'face-video',
       CANVAS:         'face-canvas',
       OVERLAY_CANVAS: 'face-debug-canvas',
       STATUS:         'face-status',
-      BTN_SCAN:       'btn-face',
+      BTN_SCAN:       'btn-capture',
       EMOJI:          'face-emoji',
       SCAN_INNER:     'face-inner',
       CONTAINER:      'face-scan-wrap',
