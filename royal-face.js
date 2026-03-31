@@ -33,7 +33,7 @@
 
     // Ngưỡng nhận diện: 0.0 = giống hệt, 0.6 = thoáng giống
     // Khuyên dùng: 0.5 (chặt) hoặc 0.6 (thoáng)
-    THRESHOLD: 0.55,
+    THRESHOLD: 0.75,
 
     // Đường dẫn thư mục models (relative hoặc CDN)
     // Nếu dùng CDN jsDelivr từ GitHub repo của bạn:
